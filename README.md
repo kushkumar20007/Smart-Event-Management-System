@@ -165,7 +165,7 @@ Stores payment information.
 ------------------------------------------------------------------------
 ## 🎥 Video Demonstration
 
-[![Watch Video](https://img.shields.io/badge/🎥-Watch_Video-red?style=for-the-badge)](https://drive.google.com/file/d/1aUdrGYUCjuCTCZOjp1ZuwDHar_3msNX7/view?usp=sharing))
+[![Watch Video](https://img.shields.io/badge/🎥-Watch_Video-red?style=for-the-badge)](https://drive.google.com/file/d/1aUdrGYUCjuCTCZOjp1ZuwDHar_3msNX7/view?usp=sharing)
 
 # 🛠️ SQL Concepts Implemented
 
