@@ -909,7 +909,6 @@ and payments** in one integrated system.
 
 ------------------------------------------------------------------------
 
-**Project Title:** Smart Event Management System\
-**Database:** MySQL\
-**Purpose:** Event Management, Ticket Booking, Payment Tracking & SQL
-Analysis
+👨‍💻 Author
+Name: Kush Kumar
+
