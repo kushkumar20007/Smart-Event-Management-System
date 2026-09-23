@@ -119,7 +119,6 @@ VALUES
 
 -- 3. CRUD OPERATIONS
 
-
 -- ADD
 INSERT INTO Events
 VALUES
@@ -316,9 +315,7 @@ FROM Attendees a
 RIGHT JOIN Tickets t
 ON a.attendee_id = t.attendee_id;
 
--- =========================================================
 -- 12. SUBQUERIES
--- =========================================================
 
 -- Attendees who booked multiple events
 SELECT
@@ -396,7 +393,6 @@ FROM Attendees;
 
 
 -- 15. WINDOW FUNCTIONS
-
 
 -- Rank events by revenue
 SELECT
