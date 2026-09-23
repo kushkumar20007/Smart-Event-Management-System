@@ -141,7 +141,6 @@ WHERE event_id = 6;
 
 -- 4. WHERE, HAVING, LIMIT
 
-
 -- Upcoming events in Ahmedabad
 SELECT e.event_name,e.event_date,v.location
 FROM Events e
@@ -372,7 +371,6 @@ FROM Payments;
 
 -- 14. STRING FUNCTIONS
 
-
 -- Uppercase organizer names
 SELECT
     organizer_name,
@@ -393,7 +391,6 @@ FROM Attendees;
 
 
 -- 15. WINDOW FUNCTIONS
-
 -- Rank events by revenue
 SELECT
     e.event_name,
@@ -436,8 +433,6 @@ GROUP BY e.event_id,e.event_name,t.booking_date;
 
 
 -- 16. CASE EXPRESSIONS
-
-
 -- Event demand
 SELECT
     event_name,
