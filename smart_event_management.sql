@@ -165,10 +165,7 @@ FROM Attendees a
 JOIN Tickets t ON a.attendee_id = t.attendee_id
 WHERE t.booking_date >= CURDATE() - INTERVAL 7 DAY;
 
-
 -- 5. AND, OR, NOT
-
-
 -- December AND more than 50% seats available
 SELECT *
 FROM Events
@@ -187,11 +184,7 @@ OR p.payment_status = 'Pending';
 SELECT *
 FROM Events
 WHERE available_seats > 0;
-
-
 -- 6. ORDER BY AND GROUP BY
-
-
 -- Sort events by date
 SELECT *
 FROM Events
@@ -213,10 +206,7 @@ LEFT JOIN Payments p
 ON t.ticket_id = p.ticket_id
 AND p.payment_status = 'Success'
 GROUP BY e.event_id,e.event_name;
-
-
 -- 7. AGGREGATE FUNCTIONS
-
 -- Total revenue
 SELECT SUM(amount_paid) AS total_revenue
 FROM Payments
@@ -246,10 +236,7 @@ JOIN Tickets t ON e.event_id = t.event_id
 GROUP BY e.event_id,e.event_name
 ORDER BY total_attendees DESC
 LIMIT 1;
-
-
 -- 8. INNER JOIN
-
 SELECT
     e.event_id,
     e.event_name,
@@ -259,11 +246,7 @@ SELECT
 FROM Events e
 INNER JOIN Venues v
 ON e.venue_id = v.venue_id;
-
-
 -- 9. LEFT JOIN
-
-
 -- Attendees who booked but did not complete payment
 SELECT
     a.name,
@@ -277,10 +260,7 @@ ON t.ticket_id = p.ticket_id
 WHERE t.ticket_id IS NOT NULL
 AND (p.payment_status IS NULL
      OR p.payment_status <> 'Success');
-
-
 -- 10. RIGHT JOIN
-
 -- Events without attendees
 SELECT
     e.event_id,
@@ -290,12 +270,8 @@ FROM Tickets t
 RIGHT JOIN Events e
 ON t.event_id = e.event_id
 WHERE t.attendee_id IS NULL;
-
-
 -- 11. FULL OUTER JOIN
 -- MySQL does not directly support FULL OUTER JOIN
-
-
 SELECT
     a.attendee_id,
     a.name,
@@ -313,9 +289,7 @@ SELECT
 FROM Attendees a
 RIGHT JOIN Tickets t
 ON a.attendee_id = t.attendee_id;
-
 -- 12. SUBQUERIES
-
 -- Attendees who booked multiple events
 SELECT
     a.name,
@@ -325,7 +299,6 @@ JOIN Tickets t
 ON a.attendee_id = t.attendee_id
 GROUP BY a.attendee_id,a.name
 HAVING COUNT(DISTINCT t.event_id) > 1;
-
 -- Organizers who managed more than 3 events
 SELECT
     o.organizer_name,
@@ -335,11 +308,7 @@ JOIN Events e
 ON o.organizer_id = e.organizer_id
 GROUP BY o.organizer_id,o.organizer_name
 HAVING COUNT(e.event_id) > 3;
-
-
 -- 13. DATE AND TIME FUNCTIONS
-
-
 -- Extract month
 SELECT
     event_name,
@@ -388,8 +357,6 @@ SELECT
     name,
     COALESCE(email,'Not Provided') AS email
 FROM Attendees;
-
-
 -- 15. WINDOW FUNCTIONS
 -- Rank events by revenue
 SELECT
@@ -416,7 +383,6 @@ SELECT
 FROM Tickets
 GROUP BY booking_date
 ORDER BY booking_date;
-
 -- Running attendees per event
 SELECT
     e.event_name,
@@ -461,11 +427,7 @@ SELECT
         ELSE 'Pending'
     END AS payment_category
 FROM Payments;
-
-
 -- 17. EXTRA USEFUL QUERIES
-
-
 -- Show all events
 SELECT * FROM Events;
 
